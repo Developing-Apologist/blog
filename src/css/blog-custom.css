@@ -1,0 +1,146 @@
+/* Blog-specific custom styles */
+/* These styles extend the centralized Tailwind CSS from developingapologist.com */
+
+/* Custom scrollbar for blog */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-logo-navy;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-logo-circuit rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-logo-circuit-alt;
+}
+
+/* Blog-specific component styles */
+.btn-primary {
+  @apply bg-logo-blue hover:bg-logo-glow text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-logo-steel hover:bg-logo-circuit text-vs-fg font-medium py-2 px-4 rounded border border-logo-circuit transition-colors duration-200;
+}
+
+.card {
+  @apply bg-logo-steel border border-logo-circuit rounded-lg p-6 shadow-lg;
+}
+
+.nav-link {
+  @apply text-vs-fg hover:text-logo-glow transition-colors duration-200;
+}
+
+.nav-link.active {
+  @apply text-logo-blue;
+}
+
+.code-block {
+  @apply bg-logo-navy border border-logo-circuit rounded p-4 font-mono text-sm;
+}
+
+/* Blog post typography styles */
+.blog-post {
+  @apply prose prose-invert max-w-none;
+}
+
+.blog-post h1 {
+  @apply text-vs-fg;
+}
+
+.blog-post h2 {
+  @apply text-vs-fg;
+}
+
+.blog-post h3 {
+  @apply text-vs-fg;
+}
+
+.blog-post p {
+  @apply text-vs-fg;
+}
+
+.blog-post a {
+  @apply text-logo-blue hover:text-logo-glow;
+}
+
+.blog-post code {
+  @apply bg-logo-steel text-logo-blue px-1 py-0.5 rounded text-sm;
+}
+
+.blog-post pre {
+  @apply bg-logo-navy border border-logo-circuit rounded p-4 overflow-x-auto;
+}
+
+.blog-post pre code {
+  @apply bg-transparent p-0;
+}
+
+.blog-post blockquote {
+  @apply border-l-4 border-logo-blue bg-logo-steel p-4 rounded-r;
+}
+
+.blog-post ul {
+  @apply text-vs-fg;
+}
+
+.blog-post ol {
+  @apply text-vs-fg;
+}
+
+.blog-post li {
+  @apply text-vs-fg;
+}
+
+/* Blog compatibility classes for existing content */
+.bg-bg-dark {
+  @apply bg-gradient-to-br from-logo-navy via-logo-navy-alt to-logo-navy;
+}
+
+.bg-card-bg {
+  @apply bg-logo-steel;
+}
+
+.bg-border-color {
+  @apply bg-logo-circuit;
+}
+
+.bg-accent-primary {
+  @apply bg-logo-blue;
+}
+
+.bg-accent-secondary {
+  @apply bg-logo-glow;
+}
+
+.text-text-primary {
+  @apply text-vs-fg;
+}
+
+.text-text-secondary {
+  @apply text-vs-fg;
+}
+
+.text-text-muted {
+  @apply text-vs-fg/60;
+}
+
+.text-accent-primary {
+  @apply text-logo-blue;
+}
+
+.text-accent-secondary {
+  @apply text-logo-glow;
+}
+
+.border-border-color {
+  @apply border-logo-circuit;
+}
+
+.border-accent-primary {
+  @apply border-logo-blue;
+} 

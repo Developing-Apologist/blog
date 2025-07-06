@@ -4,11 +4,11 @@
   "description": "The Developing Apologist Blog - A Markdown-powered blog built with Eleventy",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "build:css": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --minify",
+    "build": "npm run build:css && eleventy",
+    "build:css": "npx tailwindcss -i ./src/css/blog-custom.css -o ./src/css/blog-custom-built.css --minify",
     "build:full": "npm run build:css && npm run build",
     "start": "eleventy --serve",
-    "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch",
+    "dev": "npx tailwindcss -i ./src/css/blog-custom.css -o ./src/css/blog-custom-built.css --watch & eleventy --serve --watch --port=8081",
     "clean": "rm -rf _site"
   },
   "keywords": ["eleventy", "blog", "markdown", "apologetics", "christian"],

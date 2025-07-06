@@ -40,7 +40,7 @@ npm run build:css
 npm run dev
 ```
 
-5. Open your browser and navigate to `http://localhost:8080`
+5. Open your browser and navigate to `http://localhost:8081`
 
 ## 📝 Creating New Blog Posts
 
@@ -129,7 +129,8 @@ src/
 │   └── base.njk       # Base layout
 ├── assets/            # Static assets (images, etc.)
 ├── css/              # CSS files
-│   └── main.css      # Main stylesheet
+│   ├── blog-custom.css      # Blog-specific custom styles (source)
+│   └── blog-custom-built.css # Built CSS with Tailwind processing
 ├── posts/            # Blog posts (Markdown files)
 ├── about.njk         # About page
 ├── blog.njk          # Blog listing page
@@ -139,6 +140,20 @@ src/
 ```
 
 ## 🎨 Customization
+
+### CSS Architecture
+
+This blog uses a centralized CSS approach:
+
+1. **Centralized Tailwind CSS**: The main Tailwind CSS file is loaded from `https://developingapologist.com/css/tailwind.css`
+2. **Custom Blog Styles**: Blog-specific styles are defined in `src/css/blog-custom.css` using Tailwind's `@apply` directive
+3. **Build Process**: Custom styles are processed with Tailwind to resolve `@apply` directives and generate `src/css/blog-custom-built.css`
+
+This approach ensures:
+- **Consistency**: All sites use the same base Tailwind CSS
+- **Performance**: CSS is cached across sites
+- **Maintainability**: Color schemes and design tokens are centralized
+- **Flexibility**: Blog-specific customizations are still possible
 
 ### Colors
 
@@ -203,14 +218,11 @@ The main configuration is in `eleventy.config.js`. Key features:
 ## 📦 Build Commands
 
 ```bash
-# Build CSS only
+# Build CSS only (processes @apply directives)
 npm run build:css
 
 # Build the entire site
 npm run build
-
-# Build CSS and site together
-npm run build:full
 
 # Start development server with watch
 npm run dev
@@ -235,14 +247,14 @@ npm run clean
 ### Netlify
 
 1. Connect your GitHub repository to Netlify
-2. Set build command: `npm run build:full`
+2. Set build command: `npm run build`
 3. Set publish directory: `_site`
 4. Deploy!
 
 ### Vercel
 
 1. Connect your GitHub repository to Vercel
-2. Set build command: `npm run build:full`
+2. Set build command: `npm run build`
 3. Set output directory: `_site`
 4. Deploy!
 

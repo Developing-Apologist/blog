@@ -5,7 +5,8 @@ module.exports = {
     "./src/_includes/**/*.njk",
     "./src/_layouts/**/*.njk",
     "./src/_data/**/*.js",
-    "./src/_data/**/*.json"
+    "./src/_data/**/*.json",
+    "./src/css/blog-custom.css"
   ],
   theme: {
     extend: {
