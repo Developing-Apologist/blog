@@ -1,4 +1,11 @@
+const { DateTime } = require("luxon");
+
 module.exports = function(eleventyConfig) {
+  // Add Luxon date filter for footer component
+  eleventyConfig.addFilter("date", function(date, format) {
+    return DateTime.fromJSDate(date).toFormat(format);
+  });
+
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
@@ -73,7 +80,6 @@ module.exports = function(eleventyConfig) {
   });
 
   // Global data
-  eleventyConfig.addGlobalData("site", require("./src/_data/site.js"));
 
   return {
     dir: {
@@ -85,6 +91,13 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["njk", "md", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk"
+    dataTemplateEngine: "njk",
+    nunjucksOptions: {
+      // Add shared includes to the search path
+      searchPaths: [
+        "src/_includes",
+        "src/_includes/shared/includes"
+      ]
+    }
   };
 }; 

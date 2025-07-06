@@ -11,7 +11,13 @@
     "dev": "npx tailwindcss -i ./src/css/blog-custom.css -o ./src/css/blog-custom-built.css --watch & eleventy --serve --watch --port=8081",
     "clean": "rm -rf _site"
   },
-  "keywords": ["eleventy", "blog", "markdown", "apologetics", "christian"],
+  "keywords": [
+    "eleventy",
+    "blog",
+    "markdown",
+    "apologetics",
+    "christian"
+  ],
   "author": "The Developing Apologist",
   "license": "MIT",
   "devDependencies": {
@@ -20,5 +26,8 @@
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6"
+  },
+  "dependencies": {
+    "luxon": "^3.6.1"
   }
-} 
+}
