@@ -9,11 +9,8 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <div class="mb-8">
-                <div class="w-24 h-24 bg-logo-blue rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden">
-                    <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-24 h-24 object-cover rounded-full">
-                </div>
                 <h1 class="text-4xl md:text-6xl font-bold text-vs-fg mb-4">
-                    The Developing Apologist Blog
+                    The Developing Apologist <span class="text-logo-blue">Blog</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-vs-fg/80 mb-4 max-w-3xl mx-auto">
                     Equipping Christian software developers to defend their faith through logical, systematic apologetics
@@ -35,57 +32,8 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
     </div>
 </section>
 
-<!-- Latest Posts Section -->
-<section class="py-16 bg-darcula-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-vs-fg mb-4">Latest Articles</h2>
-            <p class="text-vs-fg/80 max-w-2xl mx-auto">
-                Explore our most recent posts that bridge the gap between faith and reason using developer-friendly approaches.
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% set recentPosts = collections.post | reverse %}
-            {% for post in recentPosts.slice(0, 3) %}
-            <article class="card hover:shadow-xl transition-shadow duration-300">
-                <div class="mb-4">
-                    <h3 class="text-xl font-semibold text-vs-blue mb-2">
-                        <a href="{{ post.url }}" class="hover:text-vs-green transition-colors duration-200">
-                            {{ post.data.title }}
-                        </a>
-                    </h3>
-                    <div class="flex items-center text-sm text-vs-fg/60 mb-3">
-                        <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time>
-                        <span class="mx-2">•</span>
-                        <span>{{ post.data.readingTime }}</span>
-                    </div>
-                    <p class="text-vs-fg/80 line-clamp-3">{{ post.data.description }}</p>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    {% for tag in post.data.tags %}
-                    <span class="bg-logo-blue/20 text-logo-blue px-2 py-1 rounded text-xs font-medium">
-                        {{ tag }}
-                    </span>
-                    {% endfor %}
-                </div>
-                <a href="{{ post.url }}" class="btn-primary text-sm">
-                    Read More
-                </a>
-            </article>
-            {% endfor %}
-        </div>
-        
-        <div class="text-center mt-12">
-            <a href="/blog" class="btn-secondary">
-                View All Posts
-            </a>
-        </div>
-    </div>
-</section>
-
 <!-- Content Categories Section -->
-<section class="py-16 bg-darcula-900">
+<section class="py-16 bg-darcula-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-vs-fg mb-4">Explore by Topic</h2>
@@ -135,7 +83,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 </section>
 
 <!-- Call to Action Section -->
-<section class="py-16 bg-darcula-800">
+<section class="py-16 bg-darcula-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="w-16 h-16 bg-vs-orange rounded-full flex items-center justify-center mx-auto mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
