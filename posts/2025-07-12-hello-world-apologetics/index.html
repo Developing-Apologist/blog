@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; frame-src https://giscus.app https://github.com; style-src 'self' 'unsafe-inline' https://developingapologist.com; img-src 'self' data: https:; connect-src 'self' https://giscus.app https://api.github.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; frame-src https://giscus.app https://github.com; style-src 'self' 'unsafe-inline' https://developingapologist.com https://giscus.app; img-src 'self' data: https:; connect-src 'self' https://giscus.app https://api.github.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
     <title>Hello, World - The Foundation of Christian Apologetics - The Developing Apologist Blog</title>
     <meta name="description" content="Every developer starts with &quot;Hello, World.&quot; Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.">
     
@@ -400,6 +400,7 @@
             return;
         }
 
+        // Create script element
         const script = document.createElement('script');
         script.src = 'https://giscus.app/client.js';
         script.setAttribute('data-repo', giscusConfig.repo);
@@ -420,6 +421,16 @@
         script.onerror = function() {
             console.warn('Failed to load giscus script, retrying in 2 seconds...');
             setTimeout(loadGiscus, 2000);
+        };
+        
+        // Add load event to ensure giscus is properly initialized
+        script.onload = function() {
+            // Force giscus to reload if it doesn't appear
+            setTimeout(() => {
+                if (window.giscus && typeof window.giscus.loadGiscusDiscussion === 'function') {
+                    window.giscus.loadGiscusDiscussion();
+                }
+            }, 1000);
         };
         
         document.head.appendChild(script);
