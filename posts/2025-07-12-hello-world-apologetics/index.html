@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; frame-src https://giscus.app https://github.com; style-src 'self' 'unsafe-inline' https://developingapologist.com; img-src 'self' data: https:; connect-src 'self' https://giscus.app https://api.github.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
     <title>Hello, World - The Foundation of Christian Apologetics - The Developing Apologist Blog</title>
     <meta name="description" content="Every developer starts with &quot;Hello, World.&quot; Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.">
     
@@ -371,8 +372,7 @@
         data-input-position="top"
         data-theme="dark"
         data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous">
+        data-loading="lazy">
     </div>
 </div>
 
@@ -382,7 +382,7 @@
         repo: 'Developing-Apologist/blog',
         repoId: 'R_kgDOPHah6A',
         category: 'Blog Comments',
-        categoryId: 'DIC_kwDOPHah6M4Cs154', // Replace with actual category ID from GitHub
+        categoryId: 'DIC_kwDOPHah6M4Cs154',
         mapping: 'title',
         strict: '0',
         reactionsEnabled: '1',
@@ -393,8 +393,13 @@
         loading: 'lazy'
     };
 
-    // Load Giscus script
+    // Load Giscus script with error handling and retry logic
     function loadGiscus() {
+        // Check if giscus is already loaded
+        if (window.giscus) {
+            return;
+        }
+
         const script = document.createElement('script');
         script.src = 'https://giscus.app/client.js';
         script.setAttribute('data-repo', giscusConfig.repo);
@@ -409,8 +414,13 @@
         script.setAttribute('data-theme', giscusConfig.theme);
         script.setAttribute('data-lang', giscusConfig.lang);
         script.setAttribute('data-loading', giscusConfig.loading);
-        script.crossOrigin = 'anonymous';
         script.async = true;
+        
+        // Add error handling
+        script.onerror = function() {
+            console.warn('Failed to load giscus script, retrying in 2 seconds...');
+            setTimeout(loadGiscus, 2000);
+        };
         
         document.head.appendChild(script);
     }
