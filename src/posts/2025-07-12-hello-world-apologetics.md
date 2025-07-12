@@ -1,5 +1,5 @@
 ---
-title: Hello, World: The Foundation of Christian Apologetics
+title: Hello, World - The Foundation of Christian Apologetics
 date: 2025-07-12
 description: Every developer starts with "Hello, World." Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.
 tags: [apologetics, foundation, faith, software-development, christianity]
