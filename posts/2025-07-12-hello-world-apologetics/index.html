@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World - The Foundation of Christian Apologetics - The Developing Apologist Blog</title>
+    <meta name="description" content="Every developer starts with &quot;Hello, World.&quot; Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.developingapologist.com/posts/2025-07-12-hello-world-apologetics/">
+    <meta property="og:title" content="Hello, World - The Foundation of Christian Apologetics - The Developing Apologist Blog">
+    <meta property="og:description" content="Every developer starts with &quot;Hello, World.&quot; Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.">
+    <meta property="og:image" content="/assets/developing-apologist-logo-v2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blog.developingapologist.com/posts/2025-07-12-hello-world-apologetics/">
+    <meta property="twitter:title" content="Hello, World - The Foundation of Christian Apologetics - The Developing Apologist Blog">
+    <meta property="twitter:description" content="Every developer starts with &quot;Hello, World.&quot; Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.">
+    <meta property="twitter:image" content="/assets/developing-apologist-logo-v2.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Centralized Tailwind CSS from main website -->
+    <link rel="stylesheet" href="https://developingapologist.com/css/tailwind.css">
+    
+    <!-- Blog-specific custom styles -->
+    <link rel="stylesheet" href="/css/blog-custom-built.css">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="The Developing Apologist Blog RSS Feed" href="/feed.xml">
+</head>
+<body class="bg-logo-navy text-vs-fg min-h-screen">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Include navbar component -->
+    <!-- Navigation -->
+<nav class="bg-logo-steel border-b border-logo-circuit sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="https://developingapologist.com" class="flex items-center space-x-3">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </a>
+            </div>
+            
+            <!-- Work in Progress Badge - Center -->
+            
+            <div class="hidden md:flex items-center">
+                <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2">
+                    <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+            </div>
+            
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                
+                    <a href="https://developingapologist.com/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="https://developingapologist.com/about" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Blog
+                    </a>
+                
+                    <a href="https://talks.developingapologist.com" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" 
+                        class="mobile-menu-button text-vs-fg hover:text-logo-glow focus:outline-none focus:ring-2 focus:ring-inset focus:ring-logo-blue"
+                        aria-controls="mobile-menu" 
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon when menu is closed -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icon when menu is open -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                <!-- Work in Progress Badge - Mobile -->
+                
+                <div class="px-3 py-2">
+                    <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                        <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                    </div>
+                </div>
+                
+                
+                
+                    <a href="https://developingapologist.com/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="https://developingapologist.com/about" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Blog
+                    </a>
+                
+                    <a href="https://talks.developingapologist.com" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button state
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle icon
+        const icons = mobileMenuButton.querySelectorAll('svg');
+        icons.forEach(icon => icon.classList.toggle('hidden'));
+      });
+    }
+  });
+</script> 
+
+    <!-- Main Content -->
+    <main>
+        
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Post Header -->
+    <header class="mb-12">
+        <div class="mb-6">
+            <a href="/blog/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200">
+                ← Back to Blog
+            </a>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">
+            Hello, World - The Foundation of Christian Apologetics
+        </h1>
+        
+        <div class="flex flex-wrap items-center gap-4 text-text-muted mb-6">
+            <time datetime="2025-07-12T00:00:00.000Z" class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                July 12, 2025
+            </time>
+            
+            
+            
+            
+            <div class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="/tags/apologetics" class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-sm hover:bg-accent-primary/30 transition-colors duration-200">
+                        apologetics
+                    </a>
+                    
+                    <a href="/tags/foundation" class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-sm hover:bg-accent-primary/30 transition-colors duration-200">
+                        foundation
+                    </a>
+                    
+                    <a href="/tags/faith" class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-sm hover:bg-accent-primary/30 transition-colors duration-200">
+                        faith
+                    </a>
+                    
+                    <a href="/tags/software-development" class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-sm hover:bg-accent-primary/30 transition-colors duration-200">
+                        software-development
+                    </a>
+                    
+                    <a href="/tags/christianity" class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-sm hover:bg-accent-primary/30 transition-colors duration-200">
+                        christianity
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        <p class="text-xl text-text-secondary leading-relaxed">
+            Every developer starts with &quot;Hello, World.&quot; Apologetics works the same way. Learn how to build your spiritual foundation before defending your faith.
+        </p>
+        
+    </header>
+    
+    <!-- Post Content -->
+    <div class="blog-post prose prose-invert max-w-none">
+        <h1>Hello, World: The Foundation of Christian Apologetics</h1>
+<p>Every developer starts with &quot;Hello, World.&quot; It's the simplest possible program — not because it does anything important, but because it proves your environment is set up correctly. Can your code compile? Is your system configured? It's a basic readiness check before you build anything serious.</p>
+<p>Apologetics works the same way. But before you output anything — before you try to engage, explain, or persuade — there's a foundational step that has nothing to do with logic or technique:</p>
+<p><strong>&quot;Sanctify the Lord God in your hearts.&quot;</strong></p>
+<h2>The &quot;Hello, World&quot; of Apologetics</h2>
+<p>That means giving Christ <strong>root access</strong> to every part of who you are. It means setting Him as your <strong>first priority</strong> and <strong>true foundation</strong>, not just another tool or dependency. If He's not central — if you're not grounded in love and worship — then your output, no matter how polished, will miss the point.</p>
+<p>Apologetics isn't about having the right answers. It's about having the right heart.</p>
+<p>So what's the &quot;Hello, World&quot; of apologetics?</p>
+<p>It's not a perfectly crafted argument. It's a quiet moment where you respond with curiosity instead of defensiveness. You don't need to prove anything — you just need to be willing to ask, to listen, and to invite someone to think more deeply. That kind of engagement can act like a <strong>breakpoint</strong> — it gently interrupts assumptions and makes space for reflection.</p>
+<p>You're not trying to crash their worldview. You're just helping them pause long enough to examine it.</p>
+<p>Just like with any &quot;Hello, World&quot; project, the point isn't to show off. It's to prove that your system is up and running — that you're willing to engage, and ready to grow. With Christ sanctified in your heart, and a humble approach in your voice, you're already doing apologetics.</p>
+<h2>What is Christian Apologetics?</h2>
+<p><strong>Christian Apologetics</strong> is the practice of giving a reasoned defense for your faith. The word comes from the Greek <em>apologia</em>, used in a legal context to describe a formal defense before a court. In 1 Peter 3:15, Peter urges believers to be ready to explain the hope they have — not defensively, but thoughtfully, with humility and respect.</p>
+<p>At its core, apologetics is about <strong>clarity</strong> — not cleverness. It's not about having every answer or winning every argument. It's about removing unnecessary barriers between someone's honest questions and the truth of the gospel.</p>
+<p>Jesus Himself modeled this. When people came with sincere questions — like Nicodemus or the woman at the well — He met them with both truth and grace. When confronted by religious leaders, He answered with Scripture, reason, and often a question of His own. He didn't dodge challenges — He engaged them.</p>
+<h2>Why This Matters for Developers</h2>
+<p>In our technical, rational field like software engineering — apologetics plays a vital role. You work in a world that demands <strong>evidence</strong>, <strong>consistency</strong>, and <strong>logical coherence</strong>. You're trained to debug complex systems and validate your conclusions. Apologetics applies that same discipline to questions of faith.</p>
+<p>You're not trying to crash someone's belief system or force a full mental reboot. Sometimes, all apologetics needs to do is set a <strong>breakpoint</strong> in their thinking — just enough to pause the execution of their assumptions. That moment of pause might be the beginning of real reflection.</p>
+<p>Like a developer stepping through unfamiliar code, they might start to examine their worldview more closely: &quot;Why <em>do</em> I believe that?&quot; &quot;Does this logic really hold?&quot; And that's the beginning of movement toward truth.</p>
+<h2>The Biblical Foundation: 1 Peter 3:15</h2>
+<p><strong>&quot;But sanctify the Lord God in your hearts, and always be ready to give a defense to everyone who asks you a reason for the hope that is in you, with meekness and fear.&quot;</strong></p>
+<p>This verse is the cornerstone of Christian apologetics. Every phrase matters — and each one shapes the <em>how</em> and <em>why</em> of giving a reasoned defense.</p>
+<h3>&quot;Sanctify the Lord God in your hearts&quot;</h3>
+<p>This is the starting point. Apologetics begins not in the mind, but in the heart. Before you defend your faith publicly, you must settle it privately: Who is Jesus to you? Have you submitted to His authority — not just intellectually, but relationally?</p>
+<p>To <strong>sanctify</strong> means to <em>set apart as holy</em>. In this context, it means putting Christ in the highest place in your heart — as Lord, not just Savior. It's an internal declaration that says, &quot;Jesus, You're in charge here. My thoughts, my words, my witness — they all flow from You.&quot;</p>
+<p>In developer terms, this is <strong>root access</strong>. You're not giving Christ a restricted user profile. You're granting Him full control. He's not a tool you pull in to win arguments — He's the architect you follow. When He's sanctified in your heart, your motives shift. You're no longer trying to prove yourself right — you're trying to represent Him well.</p>
+<h3>&quot;Always be ready to give a defense…&quot;</h3>
+<p>This isn't a suggestion for pastors or theologians — it's a command to every Christian. The Greek word translated as &quot;defense&quot; is <em>apologia</em>, where we get the term <strong>apologetics</strong>. It refers to a reasoned explanation, like the kind you'd give in court — not an emotional outburst, but a thoughtful, clear case for <em>why</em> you believe what you believe.</p>
+<p>And notice the phrase: &quot;<strong>always be ready.</strong>&quot; That's not something you cram for the night before a debate. It's a posture of preparation — a mindset you carry every day. Readiness takes intentionality. It means learning to think through your beliefs, reflect on your experiences, and study how to explain them well.</p>
+<p>For a developer, this might feel familiar. You don't wait until production crashes to figure out how your system works. You prepare. You read logs. You test edge cases. You rehearse failovers. Readiness in your faith looks the same — not in fear, but in wisdom. You anticipate questions, you sharpen your understanding, and you build confidence over time.</p>
+<h3>&quot;…to everyone who asks you…&quot;</h3>
+<p>You don't have to force the door open. Often, all it takes is living openly and honestly.</p>
+<p>I used to be terrified of bringing up my faith at work — especially in tech, where Christianity can feel like a liability. But I've learned something surprising: I didn't have to start the conversation. I just had to be real about my life.</p>
+<p>When coworkers asked, &quot;Got any plans this weekend?&quot; I'd mention running sound at church, playing bass on the worship team, or taking a half day to help with Vacation Bible School. Later, as I started taking apologetics courses, I'd mention homework assignments. These small, everyday moments opened doors. People asked questions. Some opened up about their own beliefs, doubts, or past church experiences. I didn't have a script. I just had to be present — and ready.</p>
+<h3>&quot;…a reason for the hope that is in you…&quot;</h3>
+<p>This isn't just about logic. It's personal. Peter doesn't say to give a defense for Christianity in general — he says to give a reason for <em>the hope that is in you</em>. That's your <strong>testimony</strong>.</p>
+<p>Your story doesn't need to be dramatic — it needs to be real. What has Christ done in your life? Why do you trust Him? How has your faith carried you through doubt, suffering, or success?</p>
+<p>I've been on a few short-term mission trips where the missions pastor encouraged us to prepare both a short and long version of our testimony. The idea was simple: you never know when the opportunity to share your story will come — and you don't want to be caught off guard. That same mindset applies in everyday life, not just overseas. Sometimes all you get is two minutes. Other times, you'll get twenty. But in both cases, what you're sharing is not just belief — it's hope.</p>
+<h3>&quot;…with meekness and fear.&quot;</h3>
+<p>This is your tone. It's not just <em>what</em> you say that matters — it's <em>how</em> you say it.</p>
+<p><strong>Meekness</strong> isn't weakness. It's strength under control. It's choosing gentleness even when you're confident you could &quot;win&quot; the argument. It's patience when someone else is being dismissive or snarky. Meekness is the quality that allows you to stay composed when someone takes a cheap shot at your faith. In the developer world, that might mean not taking the bait in a Slack thread or choosing not to clap back when someone mocks your beliefs at lunch. You respond firmly, but with grace.</p>
+<p><strong>Fear</strong>, in this context, doesn't mean being afraid of the other person. It means reverence — a deep respect for God, and a sober awareness that you represent Christ in every conversation. It's remembering that your words carry weight, and that the way you speak to others reflects what you believe about the God who made them.</p>
+<p>Together, meekness and fear form a posture of <strong>humble confidence</strong>. You're not here to win arguments — you're here to honor Christ and invite others to know Him.</p>
+<h2>Common Errors (Logical Bugs &amp; Theological Flaws)</h2>
+<ul>
+<li>
+<p><strong>Bug</strong>: <em>&quot;Faith doesn't need reasons.&quot;</em>
+<em>Fix</em>: This assumes that faith is blind — but biblical faith is grounded in evidence, testimony, and reason. God doesn't ask us to check our minds at the door. He invites us to love Him with all our heart, soul, strength, and <strong>mind</strong> (Luke 10:27). Reason is not the enemy of faith — it's part of its foundation.</p>
+</li>
+<li>
+<p><strong>Bug</strong>: <em>&quot;Apologetics is just arguing.&quot;</em>
+<em>Fix</em>: Apologetics isn't about being combative — it's about being clear. It's not a fight; it's a response. A well-placed question or a humble answer often has more impact than a mic-drop moment. Think less &quot;debate stage&quot; and more &quot;debugging session.&quot;</p>
+</li>
+<li>
+<p><strong>Bug</strong>: <em>&quot;I'm not smart enough to do apologetics.&quot;</em>
+<em>Fix</em>: You don't need a PhD to be faithful. You just need to be prepared. Most apologetics conversations start with simple, honest questions: &quot;Why do you believe that?&quot; or &quot;What do you mean by that?&quot; Your goal isn't to be an expert — it's to be <strong>ready</strong>.</p>
+</li>
+<li>
+<p><strong>Theological Flaw</strong>: <em>&quot;If I just argue well enough, I can convince anyone.&quot;</em>
+<em>Fix</em>: Only the Holy Spirit changes hearts. Our job is to be faithful, not forceful. Apologetics can remove barriers, but it can't regenerate souls. This truth frees you to speak with confidence <em>and</em> compassion — because the pressure isn't on you to save anyone.</p>
+</li>
+</ul>
+<h2>Practical Next Steps</h2>
+<ol>
+<li>
+<p><strong>Reflect on your foundation</strong>: Who is Jesus to you? Have you given Him root access to your heart?</p>
+</li>
+<li>
+<p><strong>Write your testimony</strong>: Keep it short, like a README for your faith. Don't aim for perfection — aim for clarity. Try writing a version you could share in 2 minutes, and then expand it to 5–10 minutes.</p>
+</li>
+<li>
+<p><strong>Practice readiness</strong>: Think about common questions you might face in your workplace. How would you respond with humility and grace?</p>
+</li>
+<li>
+<p><strong>Start small</strong>: You don't need to have all the answers. You just need to be present, prepared, and honest.</p>
+</li>
+</ol>
+<h2>The Bottom Line</h2>
+<p>Apologetics is both an <strong>art</strong> and a <strong>discipline</strong>. Like writing good code, it takes both structure and intuition.</p>
+<p>Your &quot;Hello, World!&quot; of faith may feel simple now — but it's the beginning of a beautiful build. The Greek word <em>apologia</em> doesn't mean saying &quot;I'm sorry&quot; — it means making a thoughtful, reasoned defense.</p>
+<p>You don't need to memorize arguments. You need to <strong>care</strong>, <strong>listen</strong>, and be <strong>willing</strong> to speak when asked. It's okay to say &quot;I don't know&quot; — as long as you're willing to find out.</p>
+<p>Remember: Don't turn apologetics into a pride project. It's easy to start defending <em>yourself</em> instead of your faith. Stay humble. Stay teachable. Stay focused on Christ.</p>
+<p>The louder your voice gets, the quieter your witness becomes. Being &quot;right&quot; is never a license to be rude. Readiness does not equal pressure. You're not the Holy Spirit. You don't save people — but you <em>can</em> help clear the fog so they can see Jesus more clearly.</p>
+<hr>
+<p><em>What's your &quot;Hello, World&quot; moment with apologetics? Have you ever felt unprepared to answer questions about your faith? Share your experiences in the comments below.</em></p>
+
+    </div>
+    
+    <!-- Post Footer -->
+    <footer class="mt-12 pt-8 border-t border-border-color">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="text-text-muted text-sm">
+                <p>Published on July 12, 2025</p>
+                
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://twitter.com/intent/tweet?text=Hello%2C%20World%20-%20The%20Foundation%20of%20Christian%20Apologetics&url=https://blog.developingapologist.com/posts/2025-07-12-hello-world-apologetics/" 
+                   class="text-text-muted hover:text-accent-primary transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.developingapologist.com/posts/2025-07-12-hello-world-apologetics/" 
+                   class="text-text-muted hover:text-accent-primary transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Comments Section -->
+    <!-- Giscus Comments -->
+<div class="giscus-container mt-12 pt-8 border-t border-border-color">
+    <div class="giscus" 
+         data-repo="Developing-Apologist/blog"
+        data-repo-id="R_kgDOPHah6A"
+        data-category="Blog Comments"
+        data-category-id="DIC_kwDOPHah6M4Cs154"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous">
+    </div>
+</div>
+
+<script>
+    // Giscus configuration with single category for all blog comments
+    const giscusConfig = {
+        repo: 'Developing-Apologist/blog',
+        repoId: 'R_kgDOPHah6A',
+        category: 'Blog Comments',
+        categoryId: 'DIC_kwDOPHah6M4Cs154', // Replace with actual category ID from GitHub
+        mapping: 'title',
+        strict: '0',
+        reactionsEnabled: '1',
+        emitMetadata: '1',
+        inputPosition: 'top',
+        theme: 'dark',
+        lang: 'en',
+        loading: 'lazy'
+    };
+
+    // Load Giscus script
+    function loadGiscus() {
+        const script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', giscusConfig.repo);
+        script.setAttribute('data-repo-id', giscusConfig.repoId);
+        script.setAttribute('data-category', giscusConfig.category);
+        script.setAttribute('data-category-id', giscusConfig.categoryId);
+        script.setAttribute('data-mapping', giscusConfig.mapping);
+        script.setAttribute('data-strict', giscusConfig.strict);
+        script.setAttribute('data-reactions-enabled', giscusConfig.reactionsEnabled);
+        script.setAttribute('data-emit-metadata', giscusConfig.emitMetadata);
+        script.setAttribute('data-input-position', giscusConfig.inputPosition);
+        script.setAttribute('data-theme', giscusConfig.theme);
+        script.setAttribute('data-lang', giscusConfig.lang);
+        script.setAttribute('data-loading', giscusConfig.loading);
+        script.crossOrigin = 'anonymous';
+        script.async = true;
+        
+        document.head.appendChild(script);
+    }
+
+    // Load Giscus when the page is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGiscus);
+    } else {
+        loadGiscus();
+    }
+</script> 
+</article> 
+    </main>
+
+    <!-- Include footer component -->
+    <!-- Footer -->
+<footer class="bg-logo-steel border-t border-logo-circuit py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </div>
+                
+                <p class="text-vs-fg/80 mb-4">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason.
+                </p>
+                
+                
+                <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                    <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+                
+            </div>
+            
+            <!-- Quick Links -->
+            
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    
+                    <li><a href="https://developingapologist.com/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Home</a></li>
+                    
+                    <li><a href="https://developingapologist.com/about" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">About</a></li>
+                    
+                    <li><a href="/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Blog</a></li>
+                    
+                    <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Presentations</a></li>
+                    
+                </ul>
+            </div>
+            
+            
+            <!-- External Resources -->
+            
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">Resources</h3>
+                <ul class="space-y-2">
+                    
+                    <li><a href="/feed.xml" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">RSS Feed</a></li>
+                    
+                    <li><a href="/tags" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">All Tags</a></li>
+                    
+                    <li><a href="/categories" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Categories</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+            <p class="text-vs-fg/60">
+                © Invalid DateTime The Developing Apologist. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
+</body>
+</html> 
