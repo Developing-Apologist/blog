@@ -11,48 +11,29 @@ layout: base.njk
             </a>
         </div>
         
-        <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            {{ title }}
-        </h1>
+        <!-- Only show the H1 from markdown content, so remove this title: -->
+        {# <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">{{ title }}</h1> #}
         
-        <div class="flex flex-wrap items-center gap-4 text-text-muted mb-6">
-            <time datetime="{{ date | dateIso }}" class="flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-                {{ date | dateReadable }}
-            </time>
-            
-            {% if readingTime %}
-            <span class="flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                {{ readingTime }} min read
-            </span>
-            {% endif %}
-            
+        <!-- Modern horizontal date/tags layout, no icons -->
+        <div class="flex flex-wrap items-center gap-3 text-text-muted mb-6">
+            <span class="text-sm">{{ date | dateReadable }}</span>
             {% if tags %}
-            <div class="flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                </svg>
-                <div class="flex flex-wrap gap-2">
-                    {% for tag in tags %}
-                    <a href="/tags/{{ tag | slug }}" class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-sm hover:bg-accent-primary/30 transition-colors duration-200">
-                        {{ tag }}
-                    </a>
-                    {% endfor %}
-                </div>
+            <div class="flex flex-wrap gap-2">
+                {% for tag in tags %}
+                <a href="/tags/{{ tag | slug }}" class="px-3 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-medium hover:bg-accent-primary/30 transition-colors duration-200">
+                    {{ tag }}
+                </a>
+                {% endfor %}
             </div>
             {% endif %}
         </div>
         
-        {% if description %}
+        {# Remove description at the top #}
+        {# {% if description %}
         <p class="text-xl text-text-secondary leading-relaxed">
             {{ description }}
         </p>
-        {% endif %}
+        {% endif %} #}
     </header>
     
     <!-- Post Content -->
@@ -89,5 +70,5 @@ layout: base.njk
     </footer>
 
     <!-- Comments Section -->
-    {% include "shared/includes/components/giscus.njk" %}
+    {% include "shared/includes/components/discord-comments.njk" %}
 </article> 

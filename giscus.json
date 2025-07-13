@@ -1,4 +1,0 @@
-{
-  "origins": ["https://blog.developing-apologist.com"],
-  "originsRegex": ["http://localhost:[0-9]+", "https://localhost:[0-9]+"]
-} 
