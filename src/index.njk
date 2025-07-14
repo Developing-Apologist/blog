@@ -5,103 +5,206 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-logo-navy via-logo-steel to-logo-navy py-20">
+<section class="relative bg-gradient-to-br from-logo-navy via-logo-steel to-logo-navy py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <div class="mb-8">
+            <div class="mb-10">
                 <h1 class="text-4xl md:text-6xl font-bold text-vs-fg mb-4">
                     The Developing Apologist <span class="text-logo-blue">Blog</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-vs-fg/80 mb-4 max-w-3xl mx-auto">
                     Equipping Christian software developers to defend their faith through logical, systematic apologetics
                 </p>
-                <p class="text-lg text-vs-fg/90 mb-8 max-w-2xl mx-auto">
+                <p class="text-lg text-vs-fg/90 mb-10 max-w-2xl mx-auto">
                     Welcome to our blog! Here you'll find deep-dive articles that explore apologetic topics using developer analogies, 
                     logical frameworks, and systematic analysis.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/blog" class="btn-primary">
-                        Read Latest Posts
-                    </a>
-                    <a href="https://developingapologist.com" class="btn-secondary">
-                        Visit Main Site
-                    </a>
-                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Content Categories Section -->
+<!-- Pinned Articles Section -->
+{% set pinnedPosts = [] %}
+{% for post in collections.posts %}
+  {% if post.data.pinned %}
+    {% set _ = pinnedPosts.push(post) %}
+  {% endif %}
+{% endfor %}
+{% if pinnedPosts.length > 0 %}
+<section class="py-12 bg-darcula-900 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-vs-orange mb-2">📌 Pinned Articles</h2>
+            <p class="text-vs-fg/80 max-w-2xl mx-auto">Featured or important posts, hand-picked for you.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {% for post in pinnedPosts %}
+            <article class="card hover:shadow-xl transition-shadow duration-300 post-card p-8" data-tags="{{ post.data.tags | join(',') }}">
+                <div class="mb-4">
+                    {% if post.data.tags %}
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        {% for tag in post.data.tags | slice(0, 3) %}
+                        <span class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-xs">
+                            {{ tag }}
+                        </span>
+                        {% endfor %}
+                        {% if post.data.tags.length > 3 %}
+                        <span class="text-text-muted text-xs">+{{ post.data.tags.length - 3 }} more</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <h2 class="text-xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
+                        <a href="{{ post.url }}">
+                            {{ post.data.title }}
+                        </a>
+                    </h2>
+                    {% if post.data.description %}
+                    <p class="text-text-secondary mb-4 line-clamp-3">
+                        {{ post.data.description }}
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="flex items-center justify-between text-sm text-text-muted">
+                    <time datetime="{{ post.date | dateIso }}">
+                        {{ post.date | dateReadable }}
+                    </time>
+                    {% if post.data.readingTime %}
+                    <span>{{ post.data.readingTime }} min read</span>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Blog Topic Filter and Posts Grid -->
 <section class="py-16 bg-darcula-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-vs-fg mb-4">Explore by Topic</h2>
+            <h2 class="text-3xl font-bold text-vs-fg mb-4">Latest Articles</h2>
             <p class="text-vs-fg/80 max-w-2xl mx-auto">
-                Find content that matches your interests and current questions about faith and apologetics.
+                Filter by topic to find content that matches your interests and current questions about faith and apologetics.
             </p>
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="card">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-vs-blue rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
+
+        <!-- Topics Filter -->
+        {% if collections.tagList.length > 0 %}
+        <div id="topic-filter" class="flex flex-wrap gap-3 mb-12 mt-2 justify-center">
+            {% for tag in collections.tagList %}
+            <button type="button" class="topic-pill bg-gray-700 text-accent-primary px-4 py-2 rounded-full text-base font-medium border border-gray-600 hover:bg-accent-primary/20 transition-colors duration-200 mb-2 mr-2 focus:outline-none focus:ring-2 focus:ring-accent-primary" data-tag="{{ tag }}">
+                {{ tag }}
+            </button>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Posts Grid -->
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {% for post in collections.posts %}
+                {% set isPinned = false %}
+                {% for pinned in pinnedPosts %}
+                    {% if post.url == pinned.url %}
+                        {% set isPinned = true %}
+                    {% endif %}
+                {% endfor %}
+                {% if not isPinned %}
+                <article class="card hover:shadow-xl transition-shadow duration-300 post-card" data-tags="{{ post.data.tags | join(',') }}">
+                    <div class="mb-4">
+                        {% if post.data.tags %}
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            {% for tag in post.data.tags | slice(0, 3) %}
+                            <span class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-xs">
+                                {{ tag }}
+                            </span>
+                            {% endfor %}
+                            {% if post.data.tags.length > 3 %}
+                            <span class="text-text-muted text-xs">+{{ post.data.tags.length - 3 }} more</span>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        
+                        <h2 class="text-xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
+                            <a href="{{ post.url }}">
+                                {{ post.data.title }}
+                            </a>
+                        </h2>
+                        
+                        {% if post.data.description %}
+                        <p class="text-text-secondary mb-4 line-clamp-3">
+                            {{ post.data.description }}
+                        </p>
+                        {% endif %}
                     </div>
-                    <h3 class="text-2xl font-semibold text-vs-blue">Core Apologetics</h3>
-                </div>
-                <p class="text-vs-fg/90 mb-4">
-                    Foundational articles covering the basics of Christian apologetics, 
-                    logical arguments, and evidence for the Christian faith.
-                </p>
-                <a href="/blog" class="btn-primary">
-                    Explore Core Topics
-                </a>
-            </div>
-            
-            <div class="card">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-vs-green rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
+                    
+                    <div class="flex items-center justify-between text-sm text-text-muted">
+                        <time datetime="{{ post.date | dateIso }}">
+                            {{ post.date | dateReadable }}
+                        </time>
+                        {% if post.data.readingTime %}
+                        <span>{{ post.data.readingTime }} min read</span>
+                        {% endif %}
                     </div>
-                    <h3 class="text-2xl font-semibold text-vs-green">Developer Perspectives</h3>
-                </div>
-                <p class="text-vs-fg/90 mb-4">
-                    Articles that use programming analogies, logical frameworks, 
-                    and systematic thinking to explore faith questions.
-                </p>
-                <a href="/blog" class="btn-primary">
-                    Read Developer Content
-                </a>
-            </div>
+                </article>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </section>
 
-<!-- Call to Action Section -->
-<section class="py-16 bg-darcula-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="w-16 h-16 bg-vs-orange rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        </div>
-        <h2 class="text-3xl font-bold text-vs-orange mb-4">Start Your Journey</h2>
-        <p class="text-vs-fg/80 mb-8 max-w-2xl mx-auto">
-            Ready to strengthen your faith with logical, evidence-based apologetics? 
-            Start with our latest articles and explore topics that interest you most.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/blog" class="btn-primary">
-                Browse All Posts
-            </a>
-            <a href="https://developingapologist.com" class="btn-secondary">
-                Visit Main Site
-            </a>
-        </div>
-    </div>
-</section>
+<style>
+.topic-pill.selected {
+  background-color: #3730a3 !important; /* Tailwind indigo-800 */
+  color: #fff !important;
+  border-color: #3730a3 !important;
+  box-shadow: 0 2px 8px 0 rgba(55,48,163,0.10);
+}
+.topic-pill {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+#topic-filter {
+  margin-bottom: 2.5rem;
+  margin-top: 0.5rem;
+}
+.pinned-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.pinned-card {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+}
+</style>
+
+<script>
+// Multi-select topic filter logic
+const topicPills = document.querySelectorAll('.topic-pill');
+const postCards = document.querySelectorAll('.post-card');
+let selectedTopics = [];
+
+topicPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    const tag = pill.getAttribute('data-tag');
+    pill.classList.toggle('selected');
+    if (selectedTopics.includes(tag)) {
+      selectedTopics = selectedTopics.filter(t => t !== tag);
+    } else {
+      selectedTopics.push(tag);
+    }
+    filterPosts();
+  });
+});
+
+function filterPosts() {
+  postCards.forEach(card => {
+    const tags = card.getAttribute('data-tags').split(',');
+    // Show if all selected topics are present in post's tags
+    const show = selectedTopics.every(topic => tags.includes(topic));
+    card.style.display = (selectedTopics.length === 0 || show) ? '' : 'none';
+  });
+}
+</script>

@@ -2,8 +2,17 @@ const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
   // Add Luxon date filter for footer component
-  eleventyConfig.addFilter("date", function(date, format) {
-    return DateTime.fromJSDate(date).toFormat(format);
+  eleventyConfig.addFilter("date", function(date, format = "yyyy") {
+    // If input is a string 'now', use current date
+    if (date === "now") {
+      return DateTime.now().toFormat(format);
+    }
+    // If input is a Date object
+    if (date instanceof Date) {
+      return DateTime.fromJSDate(date).toFormat(format);
+    }
+    // If input is a string date
+    return DateTime.fromISO(date).toFormat(format);
   });
 
   // Copy static assets
@@ -31,6 +40,8 @@ module.exports = function(eleventyConfig) {
     });
     return Array.from(tagsSet).sort();
   });
+
+
 
   // Filters
   eleventyConfig.addFilter("dateReadable", function(date) {
@@ -69,6 +80,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("truncate", function(str, length) {
     if (str.length <= length) return str;
     return str.substring(0, length) + '...';
+  });
+
+  eleventyConfig.addFilter("filterByTag", function(posts, tag) {
+    return posts.filter(post => {
+      return post.data.tags && post.data.tags.includes(tag);
+    });
   });
 
   // Shortcodes
