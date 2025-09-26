@@ -2,11 +2,11 @@
 title: Faith Isn't a Syntax Error - A Developer's Guide to Faith and Reason
 date: 2025-09-26
 description: A series exploring how faith and logic work together, using developer analogies to show that Christianity doesn't demand blind belief but invites reasoned trust based on evidence.
-tags: [apologetics, faith, logic, software-development, christianity, series]
+tags: [concept, dev-analogy, scripture, common-errors, exercises, notes, warnings, faith-isnt-syntax-error]
 category: series
 layout: post.njk
 pinned: true
-order: 2
+order: 3
 ---
 
 # Faith Isn't a Syntax Error - A Developer's Guide to Faith and Reason
@@ -52,4 +52,4 @@ Just as you wouldn't deploy code without testing, you shouldn't accept faith wit
 
 ---
 
-*This series is part of our ongoing exploration of how Christian faith intersects with the logical, evidence-based thinking that defines software development. Subscribe to our RSS feed to get notified when new posts in this series are published.*
+*This series is part of our ongoing exploration of how Christian faith intersects with the logical, evidence-based thinking that defines software development. Subscribe to our [RSS feed](/feed.xml) to get notified when new posts in this series are published.*

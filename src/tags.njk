@@ -1,0 +1,13 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag | slug }}/
+layout: tag.njk
+eleventyComputed:
+  title: "Posts tagged with {{ tag }}"
+  description: "All posts tagged with {{ tag }}"
+---
+
+{% set posts = collections.posts | postsByTag(tag) %}

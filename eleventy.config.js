@@ -69,6 +69,16 @@ module.exports = function(eleventyConfig) {
       });
   });
 
+  eleventyConfig.addCollection("helloWorldSeries", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/posts/**/*.md")
+      .filter(post => {
+        return post.data.tags && post.data.tags.includes('hello-world-series');
+      })
+      .sort((a, b) => {
+        return new Date(a.date) - new Date(b.date);
+      });
+  });
+
   eleventyConfig.addCollection("tagList", function(collectionApi) {
     const tagsSet = new Set();
     collectionApi.getAll().forEach(item => {
@@ -99,6 +109,12 @@ module.exports = function(eleventyConfig) {
       .replace(/[^\w\s-]/g, '')
       .replace(/[\s_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
+  });
+
+  eleventyConfig.addFilter("postsByTag", function(posts, tag) {
+    return posts.filter(post => {
+      return post.data.tags && post.data.tags.includes(tag);
+    });
   });
 
   eleventyConfig.addFilter("absoluteUrl", function(url) {

@@ -2,7 +2,7 @@
 title: Why Faith and Logic Aren't Enemies
 date: 2025-09-26
 description: Faith and logic aren't at odds. Learn how Christianity doesn't demand blind belief but invites reasoned trust based on evidence—similar to how developers trust in systems they can't fully see but know are real.
-tags: [apologetics, faith, logic, software-development, christianity, faith-isnt-syntax-error]
+tags: [concept, faith-isnt-syntax-error]
 category: apologetics
 layout: post.njk
 ---

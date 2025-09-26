@@ -2,7 +2,7 @@
 title: The Testing and Deployment Analogy
 date: 2025-10-03
 description: Every developer knows the frustration of a syntax error. That's how many skeptics view faith—as though it's a logical mistake. But Christian faith is more like deploying tested code than running untested scripts.
-tags: [apologetics, faith, logic, software-development, christianity, faith-isnt-syntax-error]
+tags: [dev-analogy, faith-isnt-syntax-error]
 category: apologetics
 layout: post.njk
 ---
