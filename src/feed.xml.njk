@@ -10,8 +10,14 @@ eleventyExcludeFromCollections: true
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-US</language>
     <lastBuildDate>{{ collections.posts[0].date | dateIso }}</lastBuildDate>
+    <image>
+      <url>{{ site.url }}/assets/developing-apologist-logo-v2.png</url>
+      <title>The Developing Apologist Blog</title>
+      <link>{{ site.url }}/</link>
+    </image>
     
-    {% for post in collections.posts | slice(0, 20) %}
+    {% for post in collections.posts %}
+    {% if loop.index <= 20 %}
     <item>
       <title>{{ post.data.title }}</title>
       <description>{{ post.data.description or post.templateContent | striptags | truncate(200) }}</description>
@@ -22,6 +28,7 @@ eleventyExcludeFromCollections: true
       <category>{{ post.data.tags | join(', ') }}</category>
       {% endif %}
     </item>
+    {% endif %}
     {% endfor %}
   </channel>
 </rss> 
