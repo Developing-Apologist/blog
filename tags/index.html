@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://developingapologist.com; img-src 'self' data: https:; connect-src 'self' https://discord.com https://blog-discord-integration.azurewebsites.net; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <title>All Tags - The Developing Apologist Blog</title>
+    <meta name="description" content="Browse all blog post tags">
+
+    <script defer data-domain="developingapologist.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.developingapologist.com/tags/">
+    <meta property="og:title" content="All Tags - The Developing Apologist Blog">
+    <meta property="og:description" content="Browse all blog post tags">
+    <meta property="og:image" content="/assets/developing-apologist-logo-v2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blog.developingapologist.com/tags/">
+    <meta property="twitter:title" content="All Tags - The Developing Apologist Blog">
+    <meta property="twitter:description" content="Browse all blog post tags">
+    <meta property="twitter:image" content="/assets/developing-apologist-logo-v2.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Main site's Tailwind CSS (centralized) -->
+    <link rel="stylesheet" href="https://developingapologist.com/css/tailwind.css">
+    
+    <!-- Blog-specific custom styles (overrides and additions only) -->
+    <link rel="stylesheet" href="/css/blog-custom.css">
+    
+    <!-- Blog index page specific styles -->
+    
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="The Developing Apologist Blog RSS Feed" href="/feed.xml">
+</head>
+<body class="bg-logo-navy text-vs-fg min-h-screen">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Include navbar component -->
+    <!-- Navigation -->
+<nav class="bg-logo-steel border-b border-logo-circuit sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="https://developingapologist.com" class="flex items-center space-x-3">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </a>
+            </div>
+            
+            <!-- Work in Progress Badge - Center -->
+            
+            <div class="hidden md:flex items-center">
+                <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2">
+                    <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+            </div>
+            
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                
+                    <a href="https://developingapologist.com/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="https://developingapologist.com/about" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="https://developingapologist.com/contact" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Contact
+                    </a>
+                
+                    <a href="/" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-logo-blue font-semibold">
+                        Blog
+                    </a>
+                
+                    <a href="https://talks.developingapologist.com" 
+                       class="hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" 
+                        class="mobile-menu-button text-vs-fg hover:text-logo-glow focus:outline-none focus:ring-2 focus:ring-inset focus:ring-logo-blue"
+                        aria-controls="mobile-menu" 
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon when menu is closed -->
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icon when menu is open -->
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-logo-circuit">
+                <!-- Work in Progress Badge - Mobile -->
+                
+                <div class="px-3 py-2">
+                    <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                        <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                    </div>
+                </div>
+                
+                
+                
+                    <a href="https://developingapologist.com/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Home
+                    </a>
+                
+                    <a href="https://developingapologist.com/about" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        About
+                    </a>
+                
+                    <a href="https://developingapologist.com/contact" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Contact
+                    </a>
+                
+                    <a href="/" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-logo-blue font-semibold">
+                        Blog
+                    </a>
+                
+                    <a href="https://talks.developingapologist.com" 
+                       class="block px-3 py-2 hover:text-logo-glow transition-colors duration-200 text-vs-fg">
+                        Presentations
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button state
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle icon
+        const icons = mobileMenuButton.querySelectorAll('svg');
+        icons.forEach(icon => icon.classList.toggle('hidden'));
+      });
+    }
+  });
+</script> 
+
+    <!-- Main Content -->
+    <main>
+        
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Tags Header -->
+    <header class="mb-12">
+        <div class="mb-6">
+            <a href="/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200">
+                ← Back to Blog
+            </a>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">
+            All Tags
+        </h1>
+        
+        <p class="text-xl text-text-secondary leading-relaxed">
+            Browse posts by topic and category
+        </p>
+    </header>
+    
+    <!-- Tags Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/common-errors/">
+                        common-errors
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    3 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-09-common-apologetics-errors/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Common Apologetics Errors (And How to Fix Them)
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 9, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/concept/">
+                        concept
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    4 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-why-faith-logic-arent-enemies/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Why Faith and Logic Aren&#39;t Enemies
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                <div class="text-sm text-text-muted">
+                    +1 more post
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/dev-analogy/">
+                        dev-analogy
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    3 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-26-hello-world-dev-analogy/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        The &quot;Hello, World&quot; of Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/exercises/">
+                        exercises
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    3 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-16-apologetics-practice-exercises/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Practical Exercises for Apologetics Readiness
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 16, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/faith-isnt-syntax-error/">
+                        faith-isnt-syntax-error
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    2 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-why-faith-logic-arent-enemies/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Why Faith and Logic Aren&#39;t Enemies
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/hello-world-series/">
+                        hello-world-series
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    8 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-30-apologetics-warnings/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Apologetics Warnings - Pitfalls to Avoid
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 30, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-23-apologetics-notes/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Apologetics Notes - Key Insights for Faithful Defense
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 23, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="text-sm text-text-muted">
+                    +5 more posts
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/introduction/">
+                        introduction
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    1 post
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-10-welcome-to-the-blog/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Welcome to The Developing Apologist Blog
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 10, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/mission/">
+                        mission
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    1 post
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-10-welcome-to-the-blog/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Welcome to The Developing Apologist Blog
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 10, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/notes/">
+                        notes
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    3 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-23-apologetics-notes/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Apologetics Notes - Key Insights for Faithful Defense
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 23, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/scripture/">
+                        scripture
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    3 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-02-1-peter-3-15-deep-dive/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        1 Peter 3:15 - The Cornerstone of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 2, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/warnings/">
+                        warnings
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    3 posts
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-12-hello-world-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Hello, World - The Foundation of Christian Apologetics
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 12, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-09-26-faith-isnt-syntax-error-series/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Faith Isn&#39;t a Syntax Error - A Developer&#39;s Guide to Faith and Reason
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        September 26, 2025
+                    </div>
+                </div>
+                
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-08-30-apologetics-warnings/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Apologetics Warnings - Pitfalls to Avoid
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        August 30, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="card hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-text-primary mb-2 hover:text-accent-primary transition-colors duration-200">
+                    <a href="/tags/welcome/">
+                        welcome
+                    </a>
+                </h2>
+                
+                <p class="text-text-muted text-sm">
+                    1 post
+                </p>
+            </div>
+            
+            <!-- Recent Posts Preview -->
+            
+            <div class="space-y-2">
+                
+                
+                <div class="text-sm">
+                    <a href="/posts/2025-07-10-welcome-to-the-blog/" class="text-accent-primary hover:text-accent-secondary transition-colors duration-200 line-clamp-1">
+                        Welcome to The Developing Apologist Blog
+                    </a>
+                    <div class="text-text-muted text-xs">
+                        July 10, 2025
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <!-- No Tags Message -->
+    
+</article>
+
+    </main>
+
+    <!-- Include footer component -->
+    <!-- Footer -->
+<footer class="bg-logo-steel border-t border-logo-circuit py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    
+                        <img src="/assets/developing-apologist-logo-v2.png" alt="The Developing Apologist" class="w-8 h-8">
+                    
+                    <span class="text-xl font-bold text-vs-fg">The Developing Apologist</span>
+                </div>
+                
+                <p class="text-vs-fg/80 mb-4">
+                    Equipping Christian software developers to defend their faith through logical, systematic apologetics that bridges faith and reason.
+                </p>
+                
+                
+                <div class="bg-logo-orange/20 border border-logo-orange/30 rounded-lg px-3 py-2 inline-block">
+                    <span class="text-logo-orange text-sm font-medium">🚧 Work in Progress 🚧</span>
+                </div>
+                
+            </div>
+            
+            <!-- Quick Links -->
+            
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    
+                    <li><a href="https://developingapologist.com/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Home</a></li>
+                    
+                    <li><a href="https://developingapologist.com/about" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">About</a></li>
+                    
+                    <li><a href="https://developingapologist.com/contact" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Contact</a></li>
+                    
+                    <li><a href="/" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Blog</a></li>
+                    
+                    <li><a href="https://talks.developingapologist.com" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Presentations</a></li>
+                    
+                </ul>
+            </div>
+            
+            
+            <!-- External Resources -->
+            
+            <div>
+                <h3 class="text-lg font-semibold text-vs-fg mb-4">Resources</h3>
+                <ul class="space-y-2">
+                    
+                    <li><a href="/feed.xml" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">RSS Feed</a></li>
+                    
+                    <li><a href="/tags" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">All Tags</a></li>
+                    
+                    <li><a href="/categories" class="text-vs-fg/80 hover:text-logo-glow transition-colors duration-200">Categories</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="border-t border-logo-circuit mt-8 pt-8 text-center">
+            <p class="text-vs-fg/60">
+                © 2025 The Developing Apologist. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
+</body>
+</html> 

@@ -175,14 +175,19 @@
   }
 }
 
-/* Enhanced Tag Styling */
-.post-card span[class*="bg-gradient-to-r"] {
-  transition: all 0.3s ease;
+/* Enhanced Tag Button Styling */
+.tag-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  border: none;
+  outline: none;
+  flex-shrink: 0;
 }
 
-.post-card span[class*="bg-gradient-to-r"]::before {
+.tag-filter-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -193,13 +198,87 @@
   transition: left 0.5s;
 }
 
-.post-card:hover span[class*="bg-gradient-to-r"]::before {
+.tag-filter-btn:hover::before {
   left: 100%;
 }
 
-.post-card:hover span[class*="bg-gradient-to-r"] {
+.tag-filter-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.tag-filter-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.tag-filter-btn.active-tag {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+.tag-filter-btn.active-tag::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+/* Hidden tags styling */
+.hidden-tag {
+  display: none !important;
+}
+
+/* Tag container wrapping */
+.post-card .flex.flex-wrap {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem;
+}
+
+/* Expand tags button styling */
+.expand-tags-btn {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background: rgba(75, 85, 99, 0.2);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.expand-tags-btn:hover {
+  background: rgba(75, 85, 99, 0.3);
+  border-color: rgba(75, 85, 99, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Clear tag filter button styling */
+#clear-tag-filter {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: rgba(75, 85, 99, 0.1) !important;
+  border: 1px solid rgba(75, 85, 99, 0.3) !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+#clear-tag-filter:hover {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+  border-color: rgba(75, 85, 99, 0.5) !important;
+  transform: scale(1.1);
+}
+
+/* Active tag filter container - hidden by default */
+#active-tag-filter {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Active tag filter container when shown */
+#active-tag-filter.show {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Responsive Design */
