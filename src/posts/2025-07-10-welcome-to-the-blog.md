@@ -3,8 +3,10 @@ title: Welcome to The Developing Apologist Blog
 date: 2025-07-10
 description: An introduction to our mission of equipping Christian software developers with apologetics tools and resources.
 tags: [welcome, introduction, mission]
+category: foundation
 layout: post.njk
 pinned: true
+order: 1
 ---
 
 # Welcome to The Developing Apologist Blog

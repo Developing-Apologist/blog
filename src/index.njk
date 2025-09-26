@@ -31,6 +31,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
     {% set _ = pinnedPosts.push(post) %}
   {% endif %}
 {% endfor %}
+{% set pinnedPosts = pinnedPosts | sort(false, false, "data.order") %}
 {% if pinnedPosts.length > 0 %}
 <section class="py-12 bg-darcula-900 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,12 +41,12 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
             {% for post in pinnedPosts %}
-            <article class="card hover:shadow-xl transition-shadow duration-300 post-card p-8" data-tags="{{ post.data.tags | join(',') }}">
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm" data-tags="{{ post.data.tags | join(',') }}">
                 <div class="mb-4">
                     {% if post.data.tags %}
                     <div class="flex flex-wrap gap-2 mb-3">
                         {% for tag in post.data.tags | slice(0, 3) %}
-                        <span class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-xs">
+                        <span class="bg-gradient-to-r from-accent-primary/20 to-accent-primary/10 text-accent-primary px-3 py-1.5 rounded-full text-xs font-medium border border-accent-primary/20 backdrop-blur-sm">
                             {{ tag }}
                         </span>
                         {% endfor %}
@@ -90,19 +91,45 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
             </p>
         </div>
 
-        <!-- Topics Filter -->
-        {% if collections.tagList.length > 0 %}
-        <div id="topic-filter" class="flex flex-wrap gap-3 mb-12 mt-2 justify-center">
-            {% for tag in collections.tagList %}
-            <button type="button" class="topic-pill bg-gray-700 text-accent-primary px-4 py-2 rounded-full text-base font-medium border border-gray-600 hover:bg-accent-primary/20 transition-colors duration-200 mb-2 mr-2 focus:outline-none focus:ring-2 focus:ring-accent-primary" data-tag="{{ tag }}">
-                {{ tag }}
-            </button>
-            {% endfor %}
+        <!-- Content Discovery -->
+        <div class="mb-16 mt-8">
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-8">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="🔍 Search articles..." 
+                           class="w-full text-vs-fg focus:outline-none text-center">
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="max-w-5xl mx-auto px-4 py-6">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button type="button" class="category-btn active" data-category="all">
+                        <span class="category-icon">📚</span>
+                        <span class="category-label">All Posts</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="apologetics">
+                        <span class="category-icon">🛡️</span>
+                        <span class="category-label">Apologetics</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="series">
+                        <span class="category-icon">📖</span>
+                        <span class="category-label">Series</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="foundation">
+                        <span class="category-icon">🏗️</span>
+                        <span class="category-label">Foundation</span>
+                    </button>
+                    <button type="button" class="category-btn" data-category="practical">
+                        <span class="category-icon">⚡</span>
+                        <span class="category-label">Practical</span>
+                    </button>
+                </div>
+            </div>
         </div>
-        {% endif %}
 
         <!-- Posts Grid -->
-        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 pt-8">
             {% for post in collections.posts %}
                 {% set isPinned = false %}
                 {% for pinned in pinnedPosts %}
@@ -111,12 +138,16 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                     {% endif %}
                 {% endfor %}
                 {% if not isPinned %}
-                <article class="card hover:shadow-xl transition-shadow duration-300 post-card" data-tags="{{ post.data.tags | join(',') }}">
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm" 
+                         data-tags="{{ post.data.tags | join(',') }}" 
+                         data-category="{{ post.data.category | default('general') }}"
+                         data-title="{{ post.data.title | lower }}"
+                         data-description="{{ post.data.description | lower }}">
                     <div class="mb-4">
                         {% if post.data.tags %}
                         <div class="flex flex-wrap gap-2 mb-3">
                             {% for tag in post.data.tags | slice(0, 3) %}
-                            <span class="bg-accent-primary/20 text-accent-primary px-2 py-1 rounded text-xs">
+                            <span class="bg-gradient-to-r from-accent-primary/20 to-accent-primary/10 text-accent-primary px-3 py-1.5 rounded-full text-xs font-medium border border-accent-primary/20 backdrop-blur-sm">
                                 {{ tag }}
                             </span>
                             {% endfor %}
@@ -154,57 +185,97 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
     </div>
 </section>
 
-<style>
-.topic-pill.selected {
-  background-color: #3730a3 !important; /* Tailwind indigo-800 */
-  color: #fff !important;
-  border-color: #3730a3 !important;
-  box-shadow: 0 2px 8px 0 rgba(55,48,163,0.10);
-}
-.topic-pill {
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
-}
-#topic-filter {
-  margin-bottom: 2.5rem;
-  margin-top: 0.5rem;
-}
-.pinned-section {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-.pinned-card {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 2rem;
-}
-</style>
 
 <script>
-// Multi-select topic filter logic
-const topicPills = document.querySelectorAll('.topic-pill');
+// Enhanced content discovery system
+const searchInput = document.getElementById('search-input');
+const categoryBtns = document.querySelectorAll('.category-btn');
 const postCards = document.querySelectorAll('.post-card');
-let selectedTopics = [];
 
-topicPills.forEach(pill => {
-  pill.addEventListener('click', () => {
-    const tag = pill.getAttribute('data-tag');
-    pill.classList.toggle('selected');
-    if (selectedTopics.includes(tag)) {
-      selectedTopics = selectedTopics.filter(t => t !== tag);
-    } else {
-      selectedTopics.push(tag);
-    }
+let currentCategory = 'all';
+let currentSearch = '';
+
+// Category filtering
+categoryBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Update active state
+    categoryBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Update current category
+    currentCategory = btn.getAttribute('data-category');
+    
+    // Apply filters
     filterPosts();
   });
 });
 
-function filterPosts() {
-  postCards.forEach(card => {
-    const tags = card.getAttribute('data-tags').split(',');
-    // Show if all selected topics are present in post's tags
-    const show = selectedTopics.every(topic => tags.includes(topic));
-    card.style.display = (selectedTopics.length === 0 || show) ? '' : 'none';
+// Debounced search for better performance
+let searchTimeout;
+if (searchInput) {
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      currentSearch = e.target.value.toLowerCase().trim();
+      filterPosts();
+    }, 150);
   });
 }
+
+function filterPosts() {
+  let visibleCount = 0;
+  
+  postCards.forEach(card => {
+    const category = card.getAttribute('data-category') || '';
+    const title = card.getAttribute('data-title') || '';
+    const description = card.getAttribute('data-description') || '';
+    const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+    
+    // Category filter
+    const categoryMatch = currentCategory === 'all' || category === currentCategory;
+    
+    // Search filter - more comprehensive search with null safety
+    const searchMatch = currentSearch === '' || 
+      title.includes(currentSearch) || 
+      description.includes(currentSearch) || 
+      tags.includes(currentSearch);
+    
+    // Show/hide card with animation
+    if (categoryMatch && searchMatch) {
+      card.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  
+  // Update results count and show feedback
+  updateResultsCount(visibleCount);
+}
+
+function updateResultsCount(visibleCount) {
+  const totalCards = document.querySelectorAll('.post-card');
+  
+  // Create or update results counter
+  let resultsCounter = document.getElementById('results-counter');
+  if (!resultsCounter) {
+    resultsCounter = document.createElement('div');
+    resultsCounter.id = 'results-counter';
+    resultsCounter.className = 'text-center text-sm text-gray-400 mb-4';
+    document.getElementById('posts-grid').parentNode.insertBefore(resultsCounter, document.getElementById('posts-grid'));
+  }
+  
+  // Update counter text
+  if (currentSearch || currentCategory !== 'all') {
+    resultsCounter.textContent = `Showing ${visibleCount} of ${totalCards.length} posts`;
+    resultsCounter.style.display = 'block';
+  } else {
+    resultsCounter.style.display = 'none';
+  }
+  
+  console.log(`Showing ${visibleCount} of ${totalCards.length} posts`);
+}
+
+// Initialize
+filterPosts();
 </script>

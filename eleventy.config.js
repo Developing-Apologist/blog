@@ -26,9 +26,47 @@ module.exports = function(eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/posts/**/*.md")
+      .filter(post => {
+        // Only include posts that are published (date is today or in the past)
+        const postDate = new Date(post.data.date);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Reset time to start of day
+        return postDate <= today;
+      })
+      .sort((a, b) => {
+        // First sort by pinned status (pinned posts first)
+        if (a.data.pinned && !b.data.pinned) return -1;
+        if (!a.data.pinned && b.data.pinned) return 1;
+        
+        // If both are pinned, sort by order field
+        if (a.data.pinned && b.data.pinned) {
+          const orderA = a.data.order || 999;
+          const orderB = b.data.order || 999;
+          if (orderA !== orderB) return orderA - orderB;
+        }
+        
+        // For non-pinned posts or pinned posts with same order, sort by date
+        return new Date(b.date) - new Date(a.date);
+      });
+  });
+
+  // Collection for all posts (including future ones) - useful for admin/management
+  eleventyConfig.addCollection("allPosts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
     });
+  });
+
+  // Collection for series posts (including future ones) - useful for series management
+  eleventyConfig.addCollection("seriesPosts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/posts/**/*.md")
+      .filter(post => {
+        return post.data.tags && post.data.tags.includes('faith-isnt-syntax-error');
+      })
+      .sort((a, b) => {
+        return new Date(a.date) - new Date(b.date);
+      });
   });
 
   eleventyConfig.addCollection("tagList", function(collectionApi) {
@@ -86,6 +124,13 @@ module.exports = function(eleventyConfig) {
     return posts.filter(post => {
       return post.data.tags && post.data.tags.includes(tag);
     });
+  });
+
+  eleventyConfig.addFilter("isPublished", function(date) {
+    const postDate = new Date(date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return postDate <= today;
   });
 
   // Shortcodes

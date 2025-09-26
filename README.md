@@ -9,6 +9,9 @@ A Markdown-powered blog built with Eleventy (11ty) that explores the intersectio
 - **Typography**: Optimized for readability with proper spacing and hierarchy
 - **Code Highlighting**: Syntax highlighting for code blocks
 - **SEO Optimized**: Meta tags, Open Graph, and structured data
+- **Interactive Search**: Real-time search with beautiful glowing search bar
+- **Category Filtering**: Filter posts by category with smooth animations
+- **Content Discovery**: Advanced filtering system for easy content navigation
 
 ## 🚀 Quick Start
 
@@ -64,7 +67,10 @@ title: Your Post Title
 date: 2024-01-25
 description: A brief description of your post for SEO and social sharing
 tags: [tag1, tag2, tag3]
-layout: layouts/post.njk
+category: apologetics  # Optional: apologetics, series, foundation, practical
+layout: post.njk
+pinned: false  # Optional: true to pin to homepage
+order: 1  # Optional: for pinned post ordering
 ---
 ```
 
@@ -122,20 +128,25 @@ The reading time is automatically calculated, but you can override it by adding 
 ```
 src/
 ├── _data/              # Global data files
-│   └── site.js        # Site configuration
+│   ├── site.json      # Site configuration
+│   ├── tags.json      # Tag definitions
+│   └── discord.json   # Discord integration settings
 ├── _includes/          # Template includes
 │   ├── layouts/       # Layout templates
+│   │   ├── base.njk   # Base layout
 │   │   └── post.njk   # Blog post layout
-│   └── base.njk       # Base layout
+│   └── shared/        # Shared components
+│       └── includes/
+│           └── components/
+│               ├── navbar.njk
+│               ├── footer.njk
+│               └── discord-comments.njk
 ├── assets/            # Static assets (images, etc.)
 ├── css/              # CSS files
-│   ├── blog-custom.css      # Blog-specific custom styles (source)
-│   └── blog-custom-built.css # Built CSS with Tailwind processing
+│   ├── blog-custom.css      # Blog-specific custom styles
+│   └── blog-index.css       # Homepage-specific styles
 ├── posts/            # Blog posts (Markdown files)
-├── about.njk         # About page
-├── blog.njk          # Blog listing page
-├── index.njk         # Homepage
-├── presentations.njk # Presentations page
+├── index.njk         # Homepage with search and filtering
 └── feed.xml.njk      # RSS feed
 ```
 
@@ -232,6 +243,12 @@ npm run start
 
 # Clean build directory
 npm run clean
+
+# View scheduled posts
+npm run schedule
+
+# Publish a scheduled post early
+npm run publish <filename.md>
 ```
 
 ## 🚀 Deployment
@@ -264,19 +281,34 @@ npm run clean
 
 - ✅ **Markdown Support**: Write posts in Markdown
 - ✅ **Automatic Reading Time**: Calculated based on word count
-- ✅ **Tags and Categories**: Organize content with tags
+- ✅ **Tags and Categories**: Organize content with tags and categories
 - ✅ **Pagination**: Automatic pagination for blog listings
 - ✅ **RSS Feed**: Automatic RSS feed generation
 - ✅ **SEO Optimization**: Meta tags, Open Graph, structured data
 - ✅ **Social Sharing**: Twitter and LinkedIn sharing buttons
+- ✅ **Scheduled Publishing**: Schedule posts for future publication
+- ✅ **Pinned Posts**: Pin important posts to the homepage
+- ✅ **Series Support**: Link related posts in series
+- ✅ **Discord Integration**: Comments powered by Discord
+
+### Content Discovery Features
+
+- ✅ **Real-time Search**: Search posts by title, description, and tags
+- ✅ **Category Filtering**: Filter by apologetics, series, foundation, practical
+- ✅ **Combined Filtering**: Search within categories
+- ✅ **Results Counter**: Shows filtered results count
+- ✅ **Smooth Animations**: Beautiful transitions and hover effects
+- ✅ **Responsive Design**: Works on all screen sizes
 
 ### Technical Features
 
 - ✅ **Responsive Design**: Mobile-first approach
-- ✅ **Dark Theme**: Modern dark color scheme
+- ✅ **Dark Theme**: Modern dark color scheme with glowing accents
 - ✅ **Fast Loading**: Optimized CSS and assets
 - ✅ **Accessibility**: Semantic HTML and ARIA labels
 - ✅ **Search Engine Friendly**: Clean URLs and meta tags
+- ✅ **Modular CSS**: Separate CSS files for different components
+- ✅ **JavaScript Filtering**: Client-side content filtering
 
 ## 🤝 Contributing
 
