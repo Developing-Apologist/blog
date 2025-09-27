@@ -49,7 +49,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                      data-pinned="true"
                      data-original-url="{{ post.url }}">
                 <div class="mb-4">
-                    <h2 class="text-xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
+                    <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
                         <a href="{{ post.url }}">
                             {{ post.data.title }}
                         </a>
@@ -75,17 +75,17 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                     <div class="flex flex-wrap gap-2">
                         {% for tag in post.data.tags %}
                             {% if loop.index <= 3 %}
-                            <button type="button" class="tag-filter-btn bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
                                 {{ tag }}
                             </button>
                             {% else %}
-                            <button type="button" class="tag-filter-btn bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
+                            <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
                                 {{ tag }}
                             </button>
                             {% endif %}
                         {% endfor %}
                         {% if post.data.tags.length > 3 %}
-                        <button type="button" class="expand-tags-btn text-gray-400 hover:text-blue-300 text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ post.url | slug }}">
+                        <button type="button" class="expand-tags-btn text-logo-glow hover:text-logo-blue text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ post.url | slug }}">
                             +{{ post.data.tags.length - 3 }} more
                         </button>
                         {% endif %}
@@ -164,7 +164,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                          data-description="{{ post.data.description | lower }}"
                          data-pinned="{{ isPinned }}">
                     <div class="mb-4">
-                        <h2 class="text-xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
+                        <h2 class="text-xl font-bold text-logo-blue/90 mb-3 hover:text-logo-glow transition-colors duration-200">
                             <a href="{{ post.url }}">
                                 {{ post.data.title }}
                             </a>
@@ -182,11 +182,11 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                             {{ post.date | dateReadable }}
                         </time>
                         <div class="flex items-center gap-3">
-                            {% if post.data.category %}
-                            <span class="text-xs font-medium text-gray-400">
-                                {{ post.data.category }}
-                            </span>
-                            {% endif %}
+                                {% if post.data.category %}
+                                <span class="text-xs font-medium text-logo-orange bg-logo-orange/10 px-2 py-1 rounded">
+                                    {{ post.data.category }}
+                                </span>
+                                {% endif %}
                             {% if post.data.readingTime %}
                             <span>{{ post.data.readingTime }} min read</span>
                             {% endif %}
@@ -199,17 +199,17 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                         <div class="flex flex-wrap gap-2">
                             {% for tag in post.data.tags %}
                                 {% if loop.index <= 3 %}
-                                <button type="button" class="tag-filter-btn bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer" data-tag="{{ tag }}">
                                     {{ tag }}
                                 </button>
                                 {% else %}
-                                <button type="button" class="tag-filter-btn bg-blue-500/20 text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
+                                <button type="button" class="tag-filter-btn bg-logo-blue/20 text-logo-blue px-3 py-1.5 rounded-full text-xs font-medium border border-logo-blue/30 hover:bg-logo-blue/30 hover:border-logo-blue/50 transition-all duration-200 cursor-pointer hidden-tag" data-tag="{{ tag }}">
                                     {{ tag }}
                                 </button>
                                 {% endif %}
                             {% endfor %}
                             {% if post.data.tags.length > 3 %}
-                            <button type="button" class="expand-tags-btn text-gray-400 hover:text-blue-300 text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ post.url | slug }}">
+                            <button type="button" class="expand-tags-btn text-logo-glow hover:text-logo-blue text-xs px-2 py-1 rounded transition-colors duration-200" data-post-id="{{ post.url | slug }}">
                                 +{{ post.data.tags.length - 3 }} more
                             </button>
                             {% endif %}
