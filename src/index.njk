@@ -33,7 +33,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 {% endfor %}
 {% set pinnedPosts = pinnedPosts | sort(false, false, "data.order") %}
 {% if pinnedPosts.length > 0 %}
-<section class="py-12 bg-darcula-900 mt-12">
+<section class="py-12 bg-logo-navy mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-vs-orange mb-2">📌 Pinned Articles</h2>
@@ -41,7 +41,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
             {% for post in pinnedPosts %}
-            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm pinned-duplicate" 
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm pinned-duplicate" 
                      data-tags="{{ post.data.tags | join(',') }}" 
                      data-category="{{ post.data.category | default('general') }}"
                      data-title="{{ post.data.title | lower }}"
@@ -71,7 +71,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 
                 <!-- Tags section with divider for pinned posts -->
                 {% if post.data.tags %}
-                <div class="border-t border-gray-700/30 pt-4">
+                <div class="border-t border-logo-circuit/30 pt-4">
                     <div class="flex flex-wrap gap-2">
                         {% for tag in post.data.tags %}
                             {% if loop.index <= 3 %}
@@ -100,7 +100,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 {% endif %}
 
 <!-- Blog Topic Filter and Posts Grid -->
-<section class="py-16 bg-darcula-800">
+<section class="py-16 bg-logo-steel">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-6">
             <h2 class="text-3xl font-bold text-vs-fg mb-3">Latest Articles</h2>
@@ -157,7 +157,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                         {% set isPinned = true %}
                     {% endif %}
                 {% endfor %}
-                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm" 
+                <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-logo-circuit/30 backdrop-blur-sm" 
                          data-tags="{{ post.data.tags | join(',') }}" 
                          data-category="{{ post.data.category | default('general') }}"
                          data-title="{{ post.data.title | lower }}"
@@ -195,7 +195,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 
                     <!-- Tags section with divider -->
                     {% if post.data.tags %}
-                    <div class="border-t border-gray-700/30 pt-4">
+                    <div class="border-t border-logo-circuit/30 pt-4">
                         <div class="flex flex-wrap gap-2">
                             {% for tag in post.data.tags %}
                                 {% if loop.index <= 3 %}
