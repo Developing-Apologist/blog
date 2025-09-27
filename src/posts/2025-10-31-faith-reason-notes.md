@@ -3,7 +3,7 @@ title: Faith and Reason Notes - Key Insights for Balanced Thinking
 date: 2025-10-31
 description: Important notes and insights about the relationship between faith and reason - from evidence-based belief to the partnership of logic and trust.
 tags: [notes, faith-isnt-syntax-error]
-category: practical
+category: series
 layout: post.njk
 ---
 

@@ -3,7 +3,7 @@ title: Putting It Into Practice
 date: 2025-10-24
 description: Put your understanding of faith and reason into practice with these hands-on exercises designed specifically for developers.
 tags: [exercises, faith-isnt-syntax-error]
-category: practical
+category: series
 layout: post.njk
 ---
 

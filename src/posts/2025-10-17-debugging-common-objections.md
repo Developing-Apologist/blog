@@ -3,7 +3,7 @@ title: Debugging Common Objections
 date: 2025-10-17
 description: Learn to identify and fix the most common logical bugs and theological flaws when discussing faith and reason with others.
 tags: [common-errors, faith-isnt-syntax-error]
-category: practical
+category: series
 layout: post.njk
 ---
 

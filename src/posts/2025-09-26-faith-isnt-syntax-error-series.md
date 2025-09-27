@@ -2,7 +2,7 @@
 title: Faith Isn't a Syntax Error - A Developer's Guide to Faith and Reason
 date: 2025-09-26
 description: A series exploring how faith and logic work together, using developer analogies to show that Christianity doesn't demand blind belief but invites reasoned trust based on evidence.
-tags: [concept, dev-analogy, scripture, common-errors, exercises, notes, warnings, faith-isnt-syntax-error]
+tags: [faith-isnt-syntax-error, series-intro]
 category: series
 layout: post.njk
 pinned: true

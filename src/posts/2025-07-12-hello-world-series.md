@@ -2,7 +2,7 @@
 title: Hello, World - The Foundation of Christian Apologetics
 date: 2025-07-12
 description: A series exploring the foundational principles of Christian apologetics, using developer analogies to show how defending your faith starts with the basics - just like every developer's first program.
-tags: [concept, dev-analogy, scripture, common-errors, exercises, notes, warnings, hello-world-series]
+tags: [hello-world-series, series-intro]
 category: series
 layout: post.njk
 pinned: true

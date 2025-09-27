@@ -41,7 +41,13 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
             {% for post in pinnedPosts %}
-            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm" data-tags="{{ post.data.tags | join(',') }}">
+            <article class="card hover:shadow-2xl transition-all duration-300 post-card p-8 bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm pinned-duplicate" 
+                     data-tags="{{ post.data.tags | join(',') }}" 
+                     data-category="{{ post.data.category | default('general') }}"
+                     data-title="{{ post.data.title | lower }}"
+                     data-description="{{ post.data.description | lower }}"
+                     data-pinned="true"
+                     data-original-url="{{ post.url }}">
                 <div class="mb-4">
                     <h2 class="text-xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
                         <a href="{{ post.url }}">
@@ -120,10 +126,6 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                     <span class="category-icon">📚</span>
                     <span class="category-label">All Posts</span>
                 </button>
-                <button type="button" class="category-btn" data-category="apologetics">
-                    <span class="category-icon">🛡️</span>
-                    <span class="category-label">Apologetics</span>
-                </button>
                 <button type="button" class="category-btn" data-category="series">
                     <span class="category-icon">📖</span>
                     <span class="category-label">Series</span>
@@ -131,10 +133,6 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                 <button type="button" class="category-btn" data-category="foundation">
                     <span class="category-icon">🏗️</span>
                     <span class="category-label">Foundation</span>
-                </button>
-                <button type="button" class="category-btn" data-category="practical">
-                    <span class="category-icon">⚡</span>
-                    <span class="category-label">Practical</span>
                 </button>
             </div>
         </div>
@@ -155,19 +153,19 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 
         <!-- Posts Grid -->
         <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 pt-8">
-            {% for post in collections.posts %}
+            {% for post in collections.latestPosts %}
                 {% set isPinned = false %}
                 {% for pinned in pinnedPosts %}
                     {% if post.url == pinned.url %}
                         {% set isPinned = true %}
                     {% endif %}
                 {% endfor %}
-                {% if not isPinned %}
                 <article class="card hover:shadow-2xl transition-all duration-300 post-card bg-gradient-to-br from-darcula-900/80 to-darcula-800/80 border border-gray-700/30 backdrop-blur-sm" 
                          data-tags="{{ post.data.tags | join(',') }}" 
                          data-category="{{ post.data.category | default('general') }}"
                          data-title="{{ post.data.title | lower }}"
-                         data-description="{{ post.data.description | lower }}">
+                         data-description="{{ post.data.description | lower }}"
+                         data-pinned="{{ isPinned }}">
                     <div class="mb-4">
                         <h2 class="text-xl font-bold text-text-primary mb-3 hover:text-accent-primary transition-colors duration-200">
                             <a href="{{ post.url }}">
@@ -186,9 +184,16 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                         <time datetime="{{ post.date | dateIso }}">
                             {{ post.date | dateReadable }}
                         </time>
-                        {% if post.data.readingTime %}
-                        <span>{{ post.data.readingTime }} min read</span>
-                        {% endif %}
+                        <div class="flex items-center gap-3">
+                            {% if post.data.category %}
+                            <span class="text-xs font-medium text-gray-400">
+                                {{ post.data.category }}
+                            </span>
+                            {% endif %}
+                            {% if post.data.readingTime %}
+                            <span>{{ post.data.readingTime }} min read</span>
+                            {% endif %}
+                        </div>
                     </div>
 
                     <!-- Tags section with divider -->
@@ -215,7 +220,6 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
                     </div>
                     {% endif %}
                 </article>
-                {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -345,24 +349,24 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
     let visibleCount = 0;
     
     postCards.forEach(card => {
+      // Skip pinned duplicates - they should always be visible
+      if (card.classList.contains('pinned-duplicate')) {
+        return;
+      }
+      
       const category = card.getAttribute('data-category') || '';
       const title = card.getAttribute('data-title') || '';
       const description = card.getAttribute('data-description') || '';
       const tags = (card.getAttribute('data-tags') || '').toLowerCase();
       
-      // Category filter
+      // Apply all filters to all posts in Latest Articles section
       const categoryMatch = currentCategory === 'all' || category === currentCategory;
-      
-      // Tag filter
       const tagMatch = currentTag === '' || tags.includes(currentTag.toLowerCase());
-      
-      // Search filter - more comprehensive search with null safety
       const searchMatch = currentSearch === '' || 
         title.includes(currentSearch) || 
         description.includes(currentSearch) || 
         tags.includes(currentSearch);
       
-      // Show/hide card with animation
       if (categoryMatch && tagMatch && searchMatch) {
         card.classList.remove('hidden');
         visibleCount++;

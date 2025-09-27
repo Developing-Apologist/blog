@@ -3,7 +3,7 @@ title: Common Apologetics Errors (And How to Fix Them)
 date: 2025-08-09
 description: Debugging the most common mistakes in Christian apologetics - from logical bugs to theological flaws that can derail your witness.
 tags: [common-errors, hello-world-series]
-category: practical
+category: series
 layout: post.njk
 ---
 

@@ -58,6 +58,18 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Collection for latest articles - sorted by date only (newest first)
+  eleventyConfig.addCollection("latestPosts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/posts/**/*.md")
+      .filter(post => {
+        // Only include published posts (respects scheduled publishing)
+        return post.data.date && new Date(post.data.date) <= new Date();
+      })
+      .sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+  });
+
   // Collection for series posts (including future ones) - useful for series management
   eleventyConfig.addCollection("seriesPosts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/**/*.md")

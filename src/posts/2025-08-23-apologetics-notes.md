@@ -3,7 +3,7 @@ title: Apologetics Notes - Key Insights for Faithful Defense
 date: 2025-08-23
 description: Important notes and insights for effective Christian apologetics - from the art and discipline of defending faith to the power of humble engagement.
 tags: [notes, hello-world-series]
-category: practical
+category: series
 layout: post.njk
 ---
 

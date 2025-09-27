@@ -3,7 +3,7 @@ title: Faith and Reason Warnings - Pitfalls to Avoid
 date: 2025-11-07
 description: Important warnings about common pitfalls when balancing faith and reason - from making reason an idol to dismissing the personal dimension of faith.
 tags: [warnings, faith-isnt-syntax-error]
-category: practical
+category: series
 layout: post.njk
 ---
 

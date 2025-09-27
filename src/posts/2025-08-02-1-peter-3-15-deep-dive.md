@@ -3,7 +3,7 @@ title: 1 Peter 3:15 - The Cornerstone of Christian Apologetics
 date: 2025-08-02
 description: A deep dive into 1 Peter 3:15, the foundational verse for Christian apologetics, breaking down each phrase and its practical implications.
 tags: [scripture, hello-world-series]
-category: apologetics
+category: series
 layout: post.njk
 ---
 

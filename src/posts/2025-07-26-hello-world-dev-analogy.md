@@ -3,7 +3,7 @@ title: The "Hello, World" of Apologetics
 date: 2025-07-26
 description: How apologetics works like a developer's first program - starting with proper configuration before building anything meaningful.
 tags: [dev-analogy, hello-world-series]
-category: apologetics
+category: series
 layout: post.njk
 ---
 

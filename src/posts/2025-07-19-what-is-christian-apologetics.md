@@ -3,7 +3,7 @@ title: What Is Christian Apologetics?
 date: 2025-07-19
 description: Understanding the foundational concept of Christian apologetics - giving a reasoned defense for your faith with clarity, not cleverness.
 tags: [concept, hello-world-series]
-category: apologetics
+category: series
 layout: post.njk
 ---
 

@@ -3,7 +3,7 @@ title: What Scripture Actually Says
 date: 2025-10-10
 description: Faith in Scripture is never presented as blind or irrational. Explore what the Bible actually says about thinking, reasoning, and believing.
 tags: [scripture, faith-isnt-syntax-error]
-category: apologetics
+category: series
 layout: post.njk
 ---
 

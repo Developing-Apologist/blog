@@ -3,7 +3,7 @@ title: Apologetics Warnings - Pitfalls to Avoid
 date: 2025-08-30
 description: Important warnings and pitfalls to avoid in Christian apologetics - from pride and arrogance to misplaced pressure and responsibility.
 tags: [warnings, hello-world-series]
-category: practical
+category: series
 layout: post.njk
 ---
 

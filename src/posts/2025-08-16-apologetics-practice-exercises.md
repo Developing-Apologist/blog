@@ -3,7 +3,7 @@ title: Practical Exercises for Apologetics Readiness
 date: 2025-08-16
 description: Hands-on exercises to help you develop your apologetics skills - from writing your testimony to practicing conversations.
 tags: [exercises, hello-world-series]
-category: practical
+category: series
 layout: post.njk
 ---
 
