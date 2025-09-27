@@ -26,16 +26,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     
-    <!-- Main site's Tailwind CSS (centralized) -->
-    <link rel="stylesheet" href="https://developingapologist.com/css/tailwind.css">
-    
-    <!-- Blog-specific custom styles (overrides and additions only) -->
-    <link rel="stylesheet" href="/css/blog-custom.css">
-    
-    <!-- Blog index page specific styles -->
-    
-    <link rel="stylesheet" href="/css/blog-index.css?v=13">
-    
+    <!-- Compiled Tailwind CSS with design system -->
+    <link rel="stylesheet" href="/css/tailwind.css">
     
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="The Developing Apologist Blog RSS Feed" href="/feed.xml">
@@ -406,83 +398,32 @@
 <!-- Blog Topic Filter and Posts Grid -->
 <section class="py-16 bg-darcula-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-vs-fg mb-4">Latest Articles</h2>
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-vs-fg mb-3">Latest Articles</h2>
             <p class="text-vs-fg/80 max-w-2xl mx-auto">
                 Filter by topic to find content that matches your interests and current questions about faith and apologetics.
             </p>
         </div>
 
         <!-- Content Discovery -->
-        <div class="mb-16 mt-8">
+        <div class="mb-8 mt-4">
             <!-- Search Bar -->
-            <div class="max-w-2xl mx-auto mb-8">
+            <div class="max-w-2xl mx-auto mb-4">
                 <!-- Reusable Search Input Component -->
 <div class="search-container">
     <input 
         type="text" 
-        class="search-input" 
+        class="search-input search-input-enhanced" 
         placeholder="Search articles..." 
         id="search-input"
         data-search-target=".post-card"
     />
 </div>
 
-<style>
-/* Search container with proper spacing and alignment */
-.search-container {
-    max-width: 5xl !important;
-    margin: 0 auto !important;
-    padding: 1.5rem 1rem !important;
-    text-align: center !important;
-}
-
-/* Search input styling - using !important to override any conflicting styles */
-.search-input {
-    width: 100% !important;
-    max-width: 32rem !important;
-    padding: 0.75rem 1rem !important;
-    border-radius: 0.5rem !important;
-    border: 1px solid rgba(18, 75, 112, 0.5) !important;
-    background-color: rgb(10, 15, 28) !important;
-    color: rgb(232, 244, 253) !important;
-    font-size: 1rem !important;
-    transition: all 0.2s ease !important;
-    box-sizing: border-box !important;
-}
-
-/* Search input focus state with glow effect */
-.search-input:focus {
-    outline: none !important;
-    border-color: rgb(0, 191, 255) !important;
-    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1) !important;
-}
-
-/* Search input placeholder */
-.search-input::placeholder {
-    color: rgba(232, 244, 253, 0.6) !important;
-}
-
-/* Ensure the input doesn't inherit any conflicting styles */
-.search-input,
-.search-input:focus,
-.search-input:hover,
-.search-input:active {
-    background-color: rgb(10, 15, 28) !important;
-    color: rgb(232, 244, 253) !important;
-    border: 1px solid rgba(18, 75, 112, 0.5) !important;
-}
-
-.search-input:focus {
-    border-color: rgb(0, 191, 255) !important;
-    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1) !important;
-}
-</style>
-
             </div>
 
         <!-- Category Filter -->
-        <div class="max-w-5xl mx-auto px-4 py-6">
+        <div class="max-w-5xl mx-auto px-4 py-3">
             <div class="flex flex-wrap gap-4 justify-center">
                 <button type="button" class="category-btn active" data-category="all">
                     <span class="category-icon">📚</span>
@@ -514,7 +455,7 @@
         </div>
 
         <!-- Posts Grid -->
-        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 pt-8">
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 pt-4">
             
                 
                 
