@@ -11,9 +11,22 @@
     max-width: 65ch;
 }
 
-.blog-post h1,
-.blog-post h2,
-.blog-post h3,
+.blog-post h1 {
+    color: #00BFFF !important; /* logo-blue */
+}
+
+.blog-post h2 {
+    color: #00D4AA !important; /* vs-green */
+}
+
+.blog-post h3 {
+    color: #FFA500 !important; /* logo-orange */
+}
+
+.blog-post h4 {
+    color: #8B5CF6 !important; /* vs-purple */
+}
+
 .blog-post p {
     color: rgb(232 244 253);
 }
