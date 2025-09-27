@@ -102,22 +102,22 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
 <!-- Blog Topic Filter and Posts Grid -->
 <section class="py-16 bg-darcula-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-vs-fg mb-4">Latest Articles</h2>
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-vs-fg mb-3">Latest Articles</h2>
             <p class="text-vs-fg/80 max-w-2xl mx-auto">
                 Filter by topic to find content that matches your interests and current questions about faith and apologetics.
             </p>
         </div>
 
         <!-- Content Discovery -->
-        <div class="mb-16 mt-8">
+        <div class="mb-8 mt-4">
             <!-- Search Bar -->
-            <div class="max-w-2xl mx-auto mb-8">
+            <div class="max-w-2xl mx-auto mb-4">
                 {% include "shared/includes/components/search-input.njk" %}
             </div>
 
         <!-- Category Filter -->
-        <div class="max-w-5xl mx-auto px-4 py-6">
+        <div class="max-w-5xl mx-auto px-4 py-3">
             <div class="flex flex-wrap gap-4 justify-center">
                 <button type="button" class="category-btn active" data-category="all">
                     <span class="category-icon">📚</span>
@@ -149,7 +149,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
         </div>
 
         <!-- Posts Grid -->
-        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 pt-8">
+        <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 pt-4">
             {% for post in collections.latestPosts %}
                 {% set isPinned = false %}
                 {% for pinned in pinnedPosts %}

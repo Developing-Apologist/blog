@@ -9,6 +9,10 @@ _site/
 dist/
 .cache/
 
+# Compiled CSS files
+src/css/tailwind.css
+*.min.css
+
 # Environment variables
 .env
 .env.local

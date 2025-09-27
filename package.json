@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:css && eleventy",
-    "build:css": "npx tailwindcss -i ./src/css/blog-custom.css -o ./src/css/blog-custom.css --minify --no-inject-base --no-inject-components --no-inject-utilities",
+    "build:css": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --minify",
     "build:full": "npm run build:css && npm run build",
     "start": "eleventy --serve",
-    "dev": "npx tailwindcss -i ./src/css/blog-custom.css -o ./src/css/blog-custom.css --watch --no-inject-base --no-inject-components --no-inject-utilities & eleventy --serve --watch --port=8081",
+    "dev": "npx tailwindcss -i ./src/css/main.css -o ./src/css/tailwind.css --watch & eleventy --serve --watch --port=8081",
     "clean": "rm -rf _site",
     "schedule": "node scripts/schedule-posts.js schedule",
     "publish": "node scripts/schedule-posts.js publish"
