@@ -113,10 +113,7 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
         <div class="mb-16 mt-8">
             <!-- Search Bar -->
             <div class="max-w-2xl mx-auto mb-8">
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="🔍 Search articles..." 
-                           class="w-full text-vs-fg focus:outline-none text-center">
-                </div>
+                {% include "shared/includes/components/search-input.njk" %}
             </div>
 
         <!-- Category Filter -->
@@ -482,3 +479,6 @@ description: "The Developing Apologist Blog - Equipping Christian software devel
   filterPosts();
 })(); // End of IIFE
 </script>
+
+<!-- Include reusable search script -->
+{% include "shared/includes/components/search-script.njk" %}
