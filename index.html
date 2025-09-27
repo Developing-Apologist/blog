@@ -417,10 +417,52 @@
         <div class="mb-16 mt-8">
             <!-- Search Bar -->
             <div class="max-w-2xl mx-auto mb-8">
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="🔍 Search articles..." 
-                           class="w-full text-vs-fg focus:outline-none text-center">
-                </div>
+                <!-- Reusable Search Input Component -->
+<div class="search-container">
+    <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Search articles..." 
+        id="search-input"
+        data-search-target=".post-card"
+    />
+</div>
+
+<style>
+/* Search container with proper spacing and alignment */
+.search-container {
+    max-width: 5xl;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+/* Search input styling */
+.search-input {
+    width: 100%;
+    max-width: 32rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(18, 75, 112, 0.5);
+    background-color: rgb(10, 15, 28);
+    color: rgb(232, 244, 253);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+/* Search input focus state with glow effect */
+.search-input:focus {
+    outline: none;
+    border-color: rgb(0, 191, 255);
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1);
+}
+
+/* Search input placeholder */
+.search-input::placeholder {
+    color: rgba(232, 244, 253, 0.6);
+}
+</style>
+
             </div>
 
         <!-- Category Filter -->
@@ -1446,6 +1488,66 @@
   filterPosts();
 })(); // End of IIFE
 </script>
+
+<!-- Include reusable search script -->
+<script>
+// Reusable Search Function
+function initializeSearch(options = {}) {
+    const {
+        inputId = 'search-input',
+        searchTarget = '.post-card',
+        titleAttribute = 'data-title',
+        descriptionAttribute = 'data-description',
+        tagsAttribute = 'data-tags',
+        onSearch = null
+    } = options;
+
+    const searchInput = document.getElementById(inputId);
+    if (!searchInput) return;
+
+    let searchTimeout;
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const searchTerm = this.value.toLowerCase();
+            const cards = document.querySelectorAll(searchTarget);
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = (card.getAttribute(titleAttribute) || '').toLowerCase();
+                const description = (card.getAttribute(descriptionAttribute) || '').toLowerCase();
+                const tags = (card.getAttribute(tagsAttribute) || '').toLowerCase();
+                
+                const matches = searchTerm === '' || 
+                    title.includes(searchTerm) || 
+                    description.includes(searchTerm) || 
+                    tags.includes(searchTerm);
+
+                if (matches) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Call custom callback if provided
+            if (onSearch && typeof onSearch === 'function') {
+                onSearch(visibleCount, cards.length);
+            }
+        }, 150);
+    });
+}
+
+// Auto-initialize if search input exists
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('search-input')) {
+        initializeSearch();
+    }
+});
+</script>
+
 
     </main>
 
